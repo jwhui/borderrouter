@@ -25,7 +25,7 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-FROM ubuntu
+FROM ubuntu:bionic
 
 
 ARG OTBR_OPTIONS
