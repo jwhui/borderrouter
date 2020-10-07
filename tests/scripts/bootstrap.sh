@@ -122,7 +122,7 @@ case "$(uname)" in
 
         if [ "$BUILD_TARGET" == scan-build ]; then
             pip3 install -U cmake
-            sudo apt-get install --no-install-recommends -y clang clang-tools
+            sudo apt-get install --no-install-recommends -y clang-tools-10
         fi
 
         if [ "$BUILD_TARGET" == pretty-check ]; then

@@ -34,7 +34,7 @@ main()
     SCAN_TMPDIR=./scan-tmp
     (mkdir -p scan-build \
         && cd scan-build \
-        && scan-build cmake -GNinja \
+        && scan-build-10 cmake -GNinja \
             -DBUILD_TESTING=OFF \
             -DCMAKE_CXX_COMPILER=clang++ \
             -DCMAKE_C_COMPILER=clang \
@@ -42,7 +42,7 @@ main()
             -DOTBR_WEB=ON \
             -DOTBR_REST=ON \
             .. \
-        && scan-build -o "${SCAN_TMPDIR}" -analyze-headers -v ninja)
+        && scan-build-10 -o "${SCAN_TMPDIR}" -analyze-headers -v ninja)
     ! (grep "^<!-- BUGFILE $(pwd)" "${SCAN_TMPDIR}"/*/report-*.html | grep -v 'third_party') && echo 'Success'
 }
 
